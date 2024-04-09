@@ -5,7 +5,7 @@ interface Product {
 
 type OrderStatus = "open" | "closed";
 
-export class ShoppingCart {
+export class ShoppingCartLegacy {
   private readonly _product: Product[] = [];
   private _orderStatus: OrderStatus = "open";
 
@@ -61,7 +61,7 @@ export class ShoppingCart {
   }
 }
 
-const shoppingCart = new ShoppingCart();
+const shoppingCart = new ShoppingCartLegacy();
 shoppingCart.addProduct({ name: "T-Shirt", price: 23.44 });
 shoppingCart.addProduct({ name: "Pen", price: 3.44 });
 shoppingCart.addProduct({ name: "Laptop", price: 2333.4433 });
@@ -69,4 +69,4 @@ shoppingCart.addProduct({ name: "Laptop", price: 2333.4433 });
 console.log(shoppingCart.product);
 console.log(shoppingCart.total());
 shoppingCart.checkout();
-console.log(shoppingCart.orderStatus)
+console.log(shoppingCart.orderStatus);
